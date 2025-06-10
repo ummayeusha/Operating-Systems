@@ -1,6 +1,7 @@
 #include <stdio.h> 
 
 int main() {
+    
     int day;
     printf("Enter day (1-3): ");// Prompting user for input
     scanf("%d", &day);
