@@ -1,34 +1,44 @@
 #include <stdio.h>
 
-//"void": it doesn't return any value
-void printHi() {
-    printf("hiii\n"); 
-}
-
-//This function takes an integer n and prints numbers from 1 to n
-void printNumbers(int n) {
-    for (int i = 1; i <= n; i++) {  //Loop starts from 1 and ends at n
-        printf("%d\t", i);
-    }
-}
-
-//This function calculates and returns the sum of numbers from 1 to n
-int sumNatNum(int n) {
-    int sum = 0;  //Initialize sum as 0
-    for (int i = 1; i <= n; i++) {
-        sum += i; 
-    }
-    return sum;  //Return the total sum
-}
+//Function with parameters
+int sum(int n, int m);         
+void table(int n);             
+void calculate(float a);    
 
 int main() {
-    printHi();  //Call printHi() to print "hiii"
+    int a, b;
+    printf("Enter the numbers: ");
+    scanf("%d %d", &a, &b);    
 
-    int n = 10; 
-    printNumbers(n);  //Call printNumbers(n) to print numbers from 1 to n
-    
-    // Call the function to calculate sum, and print the result
-    printf("Sum is: %d\n", sumNatNum(n));  
+    int s = sum(a, b); //Calling sum function and storing result in 's'
+
+    int n;
+    printf("Enter number for the table: ");
+    scanf("%d", &n);         
+    table(n); //Calling table function
+
+    float f;
+    printf("Enter value: "); 
+    scanf("%f", &f);
+    calculate(f); //Calling calculate function
 
     return 0; 
+}
+
+//Function to add two integers and return the result
+int sum(int x, int y) {
+    return x + y;  //Returns the sum of x and y
+}
+
+//Function to print multiplication table of a number
+void table(int n) {
+    for (int i = 1; i <= 10; i++) {
+        printf("%d\n", i * n);
+    }
+} 
+
+//Function to increase a float value by 15%
+void calculate(float a) {
+    a = a + (a * 0.15);  //Increases the value of a by 15%
+    printf("Value is: %f\n", a); 
 }
