@@ -38,11 +38,11 @@ void turnaround_time(int n, int pID[], int bt[], int wt[], int tat[]){
 void avg(int n, int pID[], int bt[], int wt[], int tat[]){
     int swt= 0, s_tat= 0;
     for (int i=0; i<n; i++){
+        swt+= wt[i];
+        s_tat+= tat[i];
         printf("\nFor pID %d:\n", pID[i]);
         printf("WT: %d\n", wt[i]);
         printf("TAT: %d\n", tat[i]);
-        swt+= wt[i];
-        s_tat+= tat[i];
     }
     
     int awt= swt/n;
